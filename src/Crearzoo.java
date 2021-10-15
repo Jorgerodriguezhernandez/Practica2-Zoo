@@ -90,6 +90,161 @@ public class Crearzoo {
 
     }
 
+    public static String GenerarTipoReptil() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(5);
 
+        switch (n){
+            case (1):
+                return "Dragon";
+            case (2):
+                return "Cocodrilo";
+            case (3):
+                return "Iguana";
+            case (4):
+                return "Serpiente";
+            case (0):
+                return "Tortuga";
+        }
+        return null;
+
+    }
+    public static String GenerarTipoMamifero() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(5);
+
+        switch (n){
+            case (1):
+                return "Leon";
+            case (2):
+                return "Tigre";
+            case (3):
+                return "Elefante";
+            case (4):
+                return "Rinoceronte";
+            case (0):
+                return "Marmota";
+        }
+        return null;
+
+    }
+    //Metodos Genericos y Reutilizables
+    public static String GenerarSexo() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(2);
+        if (n < 1){
+            return "Masculino";
+        }else{
+            return "Femenino";
+        }
+    }
+    public static int GenerarEdad() throws IOException {
+        Random rand = new Random();
+        int randomNum = (int) (Math.random() * ( 30 - 1 ));
+        return randomNum;
+    }
+    public static String GenerarNombre() throws IOException {
+        ArrayList<String> Nombres = new ArrayList<>();
+        FileReader f = new FileReader("E:\\Multimedia PRG\\Practica2-1\\src\\NombresAnimales.txt");
+        BufferedReader b = new BufferedReader(f);
+        String NombreNum;
+        while((b.readLine())!=null) {
+            Nombres.add((b.readLine()));
+        }
+
+        Random rand = new Random();
+        int n = rand.nextInt(Nombres.size());
+        NombreNum = Nombres.get(n);
+
+        return NombreNum;
+    }
+    public static String GenerarColor() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(5);
+
+        switch (n){
+            case (1):
+                return "Rojo";
+            case (2):
+                return "Verde";
+            case (3):
+                return "Amarillo";
+            case (4):
+                return "Azul";
+            case (0):
+                return "Violeta";
+        }
+        return null;
+    }
+    public static int GenerarVelocidad() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(60);
+        return n;
+    }
+    // Metodos de Aves
+    public static int GenerarVuelo() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(40);
+        return n;
+    }
+    public static String GenerarPalma() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(2);
+        if (n < 1){
+            return "Palmipeda";
+        }else{
+            return "Garra";
+        }
+    }
+    public static String GenerarTipoAve() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(5);
+
+        switch (n){
+            case (1):
+                return "Golondrina";
+            case (2):
+                return "Halcon";
+            case (3):
+                return "Lechuza";
+            case (4):
+                return "Buho";
+            case (0):
+                return "Cigueña";
+        }
+        return null;
+    }
+    // Metodos de Mamiferos
+    public static int GenerarPeso() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(80);
+        return n;
+    }
+    public static String GenerarHabito() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(2);
+        if (n < 1){
+            return "Diurno";
+        }else{
+            return "Nocturno";
+        }
+    }
+    public static String GenerarDieta() throws IOException {
+        Random rand = new Random();
+        int n = rand.nextInt(3);
+        if (n == 0){
+            return "Carnívora";
+        }else if( n==1){
+            return "Herbívora";
+        }else{
+            return "Omnívora";
+        }
+    }
+    // Metodos de Reptiles
+    public static Double GenerarTemperatura() throws IOException {
+        Random rand = new Random();
+        double n = rand.nextDouble();
+        return n;
+    }
 
 }
